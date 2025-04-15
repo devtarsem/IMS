@@ -8,33 +8,51 @@ import {ref, uploadBytes, getDownloadURL} from 'firebase/storage';
 import { getAuth } from "firebase/auth";
 import { signInWithPopup } from 'firebase/auth';
 import {auth, provider} from './../firebase';
-
+import homestore from '../store/homeStore'
+import { useEffect } from 'react'
+import Auth from './auth'
+import ExtraLayerOfSecurity from './securitylayerSet'
 
 function Home(){
-    const loginWithGoogle = async()=>{
-        const result = await signInWithPopup(auth, provider);
-        setUser(user=> result.user)
-        console.log(result.user)
-      }
+
+    const {user,settingUpUser, cachingUserAuth} = homestore();
+
+    useEffect(el=>{
+        cachingUserAuth()
+    }, [])
+
+    
     return(
         <div className="home">
-            <div className='auth flex flex-dir flex-2 gap16'>
-                <h2 className='head2 head2_'>Complete authentication</h2>
-                <div className='logsBox flex flex-dir gap16'>
-                    <button onClick={loginWithGoogle} className='btn flex flex-2 gap16'>
-                        <img src={google} className='icon_auth' alt='icons'/>
-                        conitnue with google
-                    </button>
-                    <button className='btn flex flex-2 gap16'>
-                        <img src={Microsoft} className='icon_auth' alt='icons'/>
-                        conitnue with Microsoft
-                    </button>
-                    <button className='btn flex flex-2 gap16'>
-                        <img src={apple} className='icon_auth' alt='icons'/>
-                        conitnue with Apple
-                    </button>
+            {!user &&
+                <Auth/>
+            }
+            {user &&
+                <div className=' flex flex-dir gap16'>
+                    <h2 className='head2 head2_ decenter'>Analyze the latest usage</h2>
+                    <div className='grid grid-5-col gap16'>
+                        <div className='content green flex flex-dir gap16 pad16'>
+                            <h3 className='head3'>Set extra security layer</h3>
+                            <button className='extraBtn'>Add layer</button>
+                        </div>
+                        <div className='content green flex flex-dir gap16 pad16'>
+                            <h3 className='head3'>Total received</h3>
+                            <p className='number'>586</p>
+                        </div>
+                        <div className='content orange flex flex-dir gap16 pad16'>
+                            <h3 className='head3'>Total sended</h3>
+                            <p className='number'>483</p>
+                        </div>
+                        <div className='content voilet flex flex-dir gap16 pad16'>
+                            <h3 className='head3'>Total exports</h3>
+                            <p className='number'>147</p>
+                        </div>
+                    </div>
+                    <div className='securityLayer grid grid-3-col'>
+                        <ExtraLayerOfSecurity/>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     )
 }

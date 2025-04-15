@@ -1,3 +1,30 @@
 .logsBox{
     width: 40vh;
 }
+.content{
+    text-align: center;
+    background-color: var(--color-second);
+}
+.green{
+    background-color: var(--color-delegate);
+}
+.orange{
+    background-color: var(--color-mustdo);
+}
+.voilet{
+    background-color: var(--color-fun);
+}
+.number{
+    font-size: 3.2rem;
+}
+.head3{
+    font-size: 2rem;
+}
+.extraBtn{
+    padding: 1rem;
+    border: none;
+    font-family: 'DM Sans';
+    background-color: var(--color-third);
+    color: var(--color-white);
+    cursor: pointer;
+}

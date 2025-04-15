@@ -9,7 +9,6 @@
     padding: 1rem;
     width: 100%;
     border: none;
-    border-radius: 10rem;
     font-family: 'Montserrat';
   }
   .inp__update{
@@ -106,7 +105,6 @@
   .inp__{
     width: 100%;
     padding: 1rem;
-    border-radius: 0.5rem;
     border: 0.1rem solid var(--color-third);
     font-family: 'Montserrat';
   }
@@ -148,6 +146,9 @@
 
 .head2_{
   color: var(--color-second);
+}
+.decenter{
+  text-align: start !important;
 }
 .icon_auth{
   width: 3.2rem;

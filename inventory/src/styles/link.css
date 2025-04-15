@@ -1,0 +1,24 @@
+.decrypt{
+    width: 50%;
+}
+.descclaimer{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+.descclaimer span{
+    color: red;
+}
+.desclaimer2{
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--color-second);
+    font-family: 'DM Sans'; 
+}
+
+.protect{
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: 'DM Sans';
+    font-weight: 600;
+    color: var(--color-third);
+}
