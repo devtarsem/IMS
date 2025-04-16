@@ -55,18 +55,18 @@ function Dashboard(){
                     <img src={spy} className='icon' alt='icons'/>
                     <p className='name_'>My secrets</p>
                 </Link>
-                <Link onClick={ActiSet} to='/' className={ navNumber===4 ? 'navlink backgd btn flex flex-3 gap8' : 'navlink btn flex flex-3 gap8'}>
+                <Link onClick={ActiSet} to='/sec-share' className={ navNumber===4 ? 'navlink backgd btn flex flex-3 gap8' : 'navlink btn flex flex-3 gap8'}>
                     <img src={status} className='icon' alt='icons'/>
-                    <p className='name_'>Activity</p>
+                    <p className='name_'>SecMore share</p>
                 </Link>
                 <Link onClick={SettingSet} to='/' className={ navNumber===5 ? 'navlink backgd btn flex flex-3 gap8' : 'navlink btn flex flex-3 gap8'}>
                     <img src={setting} className='icon' alt='icons'/>
                     <p className='name_'>Settings</p>
                 </Link>
-                <Link onClick={ExportSet} to='/' className={ navNumber===6 ? 'navlink backgd btn flex flex-3 gap8' : 'navlink btn flex flex-3 gap8'}>
+                {/* <Link onClick={ExportSet} to='/exports' className={ navNumber===6 ? 'navlink backgd btn flex flex-3 gap8' : 'navlink btn flex flex-3 gap8'}>
                     <img src={imports} className='icon' alt='icons'/>
                     <p className='name_'>Exports</p>
-                </Link>
+                </Link> */}
                 <Link onClick={LogoutSet} to='/' className={ navNumber===7 ? 'navlink backgd btn flex flex-3 gap8' : 'navlink btn flex flex-3 gap8'}>
                     <img src={logout} className='icon' alt='icons'/>
                     <p className='name_'>Logout</p>

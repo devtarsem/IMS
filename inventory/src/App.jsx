@@ -7,6 +7,8 @@ import AddSecret from './components/addSecret'
 import ShareLink from './components/secureShareLink'
 import ProtectedFileViewer from './components/protectedFileViewer'
 import MySecrets from './components/mySecrets'
+import Exports from './components/exports'
+import SecMoreshare from './components/secMoreShare'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,11 @@ const router = createBrowserRouter([
           element : <MySecrets/>
         }
         ,
+
+        {
+          path : '/sec-share',
+          element : <SecMoreshare/>
+        }
     ]
   }
   ,

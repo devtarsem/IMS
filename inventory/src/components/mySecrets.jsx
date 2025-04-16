@@ -4,6 +4,7 @@ import AllSensitiveData from './allSensitiveData';
 import AllprotectedFiles from './allProtectedFiles';
 import {useState, useEffect} from 'react';
 import mySecretStore from '../store/mysecret';
+import jsPDF from 'jspdf';
 
 function MySecrets(){
 

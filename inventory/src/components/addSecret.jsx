@@ -60,7 +60,6 @@ function AddSecret(){
             <div className='flex gap16'>
                 <button onClick={PassState} className='btn'>Generate password links</button>
                 <button onClick={DocState} className='btn'>Lock documents</button>
-                <button className='btn'>Share via SecMore</button>
             </div>
             <hr/>
             {openPass &&
