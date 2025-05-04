@@ -10,6 +10,8 @@ import { signInWithPopup } from 'firebase/auth';
 import {auth, provider} from './../firebase';
 import homestore from '../store/homeStore'
 import { useEffect } from 'react'
+import './../styles/media.css'
+
 
 function Auth(){
     const {user,settingUpUser} = homestore();
@@ -32,14 +34,14 @@ function Auth(){
                     <img src={google} className='icon_auth' alt='icons'/>
                     conitnue with google
                 </button>
-                <button className='btn flex flex-2 gap16'>
+                {/* <button className='btn flex flex-2 gap16'>
                     <img src={Microsoft} className='icon_auth' alt='icons'/>
                     conitnue with Microsoft
                 </button>
                 <button className='btn flex flex-2 gap16'>
                     <img src={apple} className='icon_auth' alt='icons'/>
                     conitnue with Apple
-                </button>
+                </button> */}
             </div>
         </div>
     )

@@ -71,3 +71,16 @@
   text-decoration: none;
   
 }
+
+.redbg{
+  box-shadow: 0 0 1rem red;
+}
+.greenbg{
+  box-shadow: 0 0 1rem green;
+}
+.len{
+  font-size: 1.4rem;
+}
+.visit{
+  text-align: center;
+}

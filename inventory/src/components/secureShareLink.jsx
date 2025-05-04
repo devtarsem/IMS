@@ -4,6 +4,8 @@ import { useParams } from 'react-router';
 import ReactJson from 'react-json-view';
 import 'jsoneditor-react/es/editor.min.css';
 import linkstore from '../store/linkStore';
+import './../styles/media.css'
+
 import { createRef, useEffect } from 'react';
 
 function ShareLink(){

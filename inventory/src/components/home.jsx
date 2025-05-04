@@ -12,10 +12,13 @@ import homestore from '../store/homeStore'
 import { useEffect } from 'react'
 import Auth from './auth'
 import ExtraLayerOfSecurity from './securitylayerSet'
+import Error from './error'
+import './../styles/media.css'
+
 
 function Home(){
 
-    const {user,settingUpUser, cachingUserAuth} = homestore();
+    const {user,settingUpUser, cachingUserAuth, homeError, errorMSG} = homestore();
 
     useEffect(el=>{
         cachingUserAuth()
@@ -24,17 +27,20 @@ function Home(){
     
     return(
         <div className="home">
+            {homeError &&
+                <Error msg={errorMSG} />
+            }
             {!user &&
                 <Auth/>
             }
             {user &&
-                <div className=' flex flex-dir gap16'>
+                <div className=' flex flex-dir gap16 pad16'>
                     <h2 className='head2 head2_ decenter'>Analyze the latest usage</h2>
-                    <div className='grid grid-5-col gap16'>
-                        <div className='content green flex flex-dir gap16 pad16'>
+                    <div className='daatana grid grid-5-col gap16'>
+                        {/* <div className='content green flex flex-dir gap16 pad16'>
                             <h3 className='head3'>Set extra security layer</h3>
                             <button className='extraBtn'>Add layer</button>
-                        </div>
+                        </div> */}
                         <div className='content green flex flex-dir gap16 pad16'>
                             <h3 className='head3'>Total received</h3>
                             <p className='number'>586</p>

@@ -4,6 +4,15 @@ import axios from 'axios'
 const homestore = create(
     (set)=>({
         user : false,
+        homeError : false,
+        errorMSG : '',
+        unLockAllNav : false,
+        cacheunlockNav : async()=>{
+            if(localStorage.getItem('auth')){
+                set({unLockAllNav : true})
+            }
+        }
+        ,
         settingUpUser : async(email,verify,name)=>{
             localStorage.setItem('auth', JSON.stringify({email, verify, name, id : ''}))
             
@@ -21,6 +30,7 @@ const homestore = create(
                     const auth = JSON.parse(localStorage.getItem('auth'));
                     auth.id = el.data.data.id;
                     localStorage.setItem('auth', JSON.stringify(auth));
+                    set({unLockAllNav : true})
                 }
             })
             
@@ -40,6 +50,14 @@ const homestore = create(
                 set({user : false})
 
             }
+        }
+        ,
+        settingHomeErroTrue : async(msg)=>{
+            set({homeError : true, errorMSG : msg})
+        }
+        ,
+        settingHomeErrorFalse : async()=>{
+            set({homeError : false})
         }
     })
 )

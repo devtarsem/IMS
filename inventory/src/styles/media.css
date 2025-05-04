@@ -1,0 +1,186 @@
+@media(max-width : 1441px){
+  .mininavbarBtn{
+    display: none;
+  }
+  .authCheck{
+    background-color: #ffffffe1 !important;
+  }
+  .auth{
+    height: 100vh;
+  }
+}
+
+@media(max-width : 1331px){
+    .bighad{
+        font-size: 4.8rem !important;
+    }
+    
+}
+
+@media(max-width : 1252px){
+    .spanofhome{
+        font-size: 2.4rem !important;
+    }
+    .navs{
+        display: none !important;
+    }
+    .mininavbarBtn{
+        display: block !important;
+    }
+    .display{
+        grid-column: 1/16;
+    }
+}
+
+@media(max-width : 1155px){
+    .displayprotefiles{
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+}
+
+@media(max-width : 870px){
+    .homeimg{
+        width: 50%;
+    }
+    .bighad{
+        font-size: 4rem !important;
+    }
+    .markhomedis{
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .feagrids{
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+}
+
+@media(max-width : 801px){
+    .sesidata{
+        flex-direction: column;
+        gap: 1.6rem;
+        /* flex-direction: column !important; */
+    }
+}
+
+@media(max-width: 770px){
+    .head3{
+        font-size: 1 .4rem !important;
+    }
+    .head2{
+        font-size: 1.8rem !important;
+    }
+    .btn{
+        font-size: 1.4rem !important;
+    }
+    .bighad{
+        font-size: 3.2rem !important;
+    }
+    .head{
+        font-size: 1.6rem !important;
+    }
+    .navlink{
+        font-size: 1.4rem !important;
+    }
+}
+
+@media(max-width : 650px){
+    .formofprotectdocs{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .uploadfile{
+        padding: 1.4rem;
+    }
+}
+
+@media(max-width : 610px){
+    .homeimg{
+        width: 70%;
+    }
+    .daatana{
+        grid-template-columns: repeat(3,1fr) !important;
+    }
+    .menybtnicon{
+        width: 60%;
+    }
+    .head_auth{
+        font-size: 1.4rem;
+    }
+    .authCheck{
+        background-color: #ffffffe1 !important;
+    }
+    .emailAcc{
+        font-size: 1.2rem !important;
+    }
+    .edit{
+        width: 70% !important;
+    }
+    .didid{
+        grid-column: 1/3;
+    }
+    .resetIcons{
+        width: 1.8rem !important;
+    }
+    .marklinks{
+        display: none !important;
+    }
+    .des{
+        font-size: 1.4rem !important;
+    }
+    .decrypt,.prtefileinp{
+        flex-direction: column !important;
+    }
+    .desclaimer2,.descclaimer,.pas{
+        font-size: 1.4rem !important;
+        text-align: center;
+    }
+}
+
+@media(max-width : 430px){
+    .layOut{
+        height: 100%;
+    }
+    .spanofhome{
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    .daatana{
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    .jsontext{
+        font-size: 1.4rem !important;
+    }
+    .sensispots{
+        display: grid !important;
+        grid-template-columns: repeat(2,1fr) !important;
+        padding: 1rem;
+        border: 0.1rem solid var(--color-second);
+    }
+    .didid{
+        grid-column: 1/4;
+    }
+}
+
+@media(max-width : 400px){
+    .spanofhome{
+        font-size: 1.6rem !important;     
+        line-height: 1.5;
+    }
+    .btn{
+        font-size: 1.2rem !important;
+    }
+    .label{
+        font-size: 1.6rem !important;
+    }
+    .head_auth{
+        font-size: 1.2rem;
+        text-wrap: wrap !important;
+    }
+    .emailAcc{
+        font-size: 1rem !important;
+    }
+}
+@media(max-width : 325px){
+    .btn{
+        font-size: 1rem !important;
+    }
+    
+}

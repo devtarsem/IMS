@@ -1,0 +1,22 @@
+.error{
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    top : 0;
+    left: 0;
+    background-color: var(--color-fun);
+}
+.err{
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+.closerBtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close__err{
+    width: 2.8rem;
+}

@@ -31,3 +31,47 @@
 .backgd{
     background-color: var(--color-five) !important;
 }
+
+.homeimg{
+    width: 40%;
+    border-radius: 50%;
+}
+.spanofhome span{
+    background-color: var(--color-second);
+    padding: 0.5rem 2rem;
+    color: var(--color-white);
+}
+.layOut{
+    position: relative;
+    overflow: hidden;
+}
+
+.name_{
+    color: var(--color-white);
+}
+
+.mininavbarBtn{
+    position: fixed;
+    right: 2%;
+    top: 4%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+.dashboard{
+    position: relative;
+}
+.mininav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35vh;
+    height: 100vh;
+    background-color: var(--color-third);
+    z-index: 10;
+}
+
+.closeioconmeu{
+    width: 30% !important;
+}

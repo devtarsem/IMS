@@ -1,14 +1,16 @@
 import './../styles/mysecrets.css'
 import './../utils/util.css'
-import AllSensitiveData from './allSensitiveData';
-import AllprotectedFiles from './allProtectedFiles';
+import AllSensitiveData from './AllSensitiveData';
+import AllprotectedFiles from './AllProtectedFiles';
 import {useState, useEffect} from 'react';
 import mySecretStore from '../store/mysecret';
-import jsPDF from 'jspdf';
+import AuthCheck from './authLayerCheck';
+import './../styles/media.css'
+
 
 function MySecrets(){
 
-    const {showSensitiveDataPanel, fetchingAllTheProtectedFiles,openDataPanelAndCloseFilePanel, closeSensitiveDataPanelAndOpenFilePanel} = mySecretStore()
+    const {showSensitiveDataPanel, isLoading, fetchingAllTheProtectedFiles,openDataPanelAndCloseFilePanel, closeSensitiveDataPanelAndOpenFilePanel} = mySecretStore()
 
     useEffect(el=>{
         fetchingAllTheProtectedFiles();
@@ -23,22 +25,30 @@ function MySecrets(){
     }
 
     return(
-        <div className='mysecrets flex flex-dir gap16'>
+        <div className='mysecrets flex flex-dir gap16 pad16'>
+            <AuthCheck/>
             <h2 className='head2 head2_ decenter'>Your secrets</h2>
             <div className='flex gap16'>
                 <button onClick={openDataPanel} className='btn'>Sensitive data</button>
                 <button onClick={openFilePanel} className='btn'>Protected files</button>
             </div>
             <hr/>
-            <div className='sensitiveData pad16'>
-                {showSensitiveDataPanel &&
-                    <AllSensitiveData/>
-                }
-                {!showSensitiveDataPanel &&
-                    <AllprotectedFiles/>
-                }
-            </div>
-            <div className='pagination flex flex-1'>
+            {isLoading ?
+                <div className='flex flex-dir gap16 flex-2'>
+                    <div className='loader'></div>
+                    <p className='wait'>wait your files is laoding</p>
+                </div>
+            :
+                <div className='sensitiveData pad16'>
+                    {showSensitiveDataPanel &&
+                        <AllSensitiveData/>
+                    }
+                    {!showSensitiveDataPanel &&
+                        <AllprotectedFiles/>
+                    }
+                </div>
+            }
+            {/* <div className='pagination flex flex-1'>
                 <button className='prevnext'>&larr; Prev</button>
                 <div className='flex flex-2 gap32'>
                     {[1,2,3,4,5,6].map(el=>
@@ -47,7 +57,7 @@ function MySecrets(){
                 </div>
                 <button className='prevnext'> Next &rarr;</button>
 
-            </div>
+            </div> */}
 
         </div>
     )

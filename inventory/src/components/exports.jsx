@@ -1,5 +1,7 @@
 import './../styles/add_sec.css'
 import './../utils/util.css'
+import './../styles/media.css'
+
 function Exports(){
     return(
         <div className="exp flex flex-dir gap16">

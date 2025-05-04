@@ -1,0 +1,15 @@
+.authCheck{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-light-orange);
+    z-index: 2000;
+}
+.zLess{
+    z-index: -2000 !important;
+}
+.redirect{
+    text-align: center;
+}

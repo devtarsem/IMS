@@ -15,6 +15,26 @@ const secretStore = create(
         uploadedFileData : {},
         protectedFileReady : false,
         providedUrlFromBackend : ' ',
+        newSecretError : false,
+        newSecretErrorMsg : '',
+        numCounter : 0,
+        paswordCounter : 0,
+        displayCounterNumberOfkeys : async(key)=>{
+            set({numCounter : key.length})
+        }
+        ,
+        displayCounterNumberOfkeysInPassword : async(key)=>{
+            set({paswordCounter : key.length})
+        }
+        ,
+        settingNewSecretErroTrue : async(msg)=>{
+            set({newSecretError : true, newSecretErrorMsg : msg})
+        }
+        ,
+        settingNewSecretErroFalse : async()=>{
+            set({newSecretError : false})
+        }
+        ,
         sendingDataOfJSonPassword : (fileData)=>{
             set({isLoading : true})
             axios({
@@ -27,7 +47,7 @@ const secretStore = create(
             }).then(el=>{
                 console.log(el.data)
                 if(el.data.status === 'Success'){
-                    set({fileEncryptionDone: true, encryptedFile : el.data.data.file, iv : [...el.data.data.iv.data]})
+                    set({fileEncryptionDone: true, encryptedFile : el.data.data.file, iv : [...el.data.data.iv]})
                 }
             })
         }
@@ -91,6 +111,12 @@ const secretStore = create(
 
         returnToInitialState : async()=>{
             set({protectedFileReady : false, isLoadingForProtectFFle : false})
+        }
+
+        ,
+
+        returnToInitialStateInSensitiveDataComp : async()=>{
+            set({isLoading : false, numCounter:0})
         }
     })
 )

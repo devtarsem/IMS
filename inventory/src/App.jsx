@@ -9,34 +9,48 @@ import ProtectedFileViewer from './components/protectedFileViewer'
 import MySecrets from './components/mySecrets'
 import Exports from './components/exports'
 import SecMoreshare from './components/secMoreShare'
+import Setting from './components/settings'
+import Marketing from './components/marketing'
 
 const router = createBrowserRouter([
   {
     path : '/',
+    element : <Marketing/>,
+    
+  }
+  ,
+  {
+    path : '/dashboard',
     element : <Dashboard/>,
     children : [
-        {
-          path : '/home',
-          element : <Home/>
-        }
-        ,
-        {
-          path : '/secret',
-          element : <AddSecret/>
-        }
-        ,
-        
-        {
-          path : '/my-secret',
-          element : <MySecrets/>
-        }
-        ,
+      {
+        path : 'home',
+        element : <Home/>
+      }
+      ,
+      {
+        path : 'secret',
+        element : <AddSecret/>
+      }
+      ,
+      
+      {
+        path : 'my-secret',
+        element : <MySecrets/>
+      }
+      ,
 
-        {
-          path : '/sec-share',
-          element : <SecMoreshare/>
-        }
-    ]
+      {
+        path : 'sec-share',
+        element : <SecMoreshare/>
+      }
+      ,
+
+      {
+        path : 'setting',
+        element : <Setting/>
+      }
+  ]
   }
   ,
   {

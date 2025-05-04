@@ -1,3 +1,5 @@
+import './../styles/media.css'
+
 function SecMoreshare(){
     return(
         <div className="sahresc">

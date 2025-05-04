@@ -3,11 +3,15 @@ import './../utils/util.css'
 import dot from './../icon/dot.png'
 import layerStore from '../store/securityLaterStore'
 import {createRef, useEffect} from 'react';
+import homestore from '../store/homeStore';
+import './../styles/media.css'
+
 
 function ExtraLayerOfSecurity(){
 
     const {setSecurityLayer, cacheLayerStatus, layerStatus, deActivateLayer} = layerStore();
     const password = createRef();
+    const {settingHomeErroTrue} = homestore();
 
     useEffect(el=>{
         cacheLayerStatus();
@@ -15,6 +19,10 @@ function ExtraLayerOfSecurity(){
 
     function SetLayerPasword(el){
         el.preventDefault();
+        if(password.current.value.length < 6){
+            settingHomeErroTrue('The password must be off 6 digit long');
+            return
+        }
         setSecurityLayer(password.current.value);
     }
 

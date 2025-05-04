@@ -8,8 +8,12 @@ import locale from 'react-json-editor-ajrm/locale/en';
 import { useState, createRef } from 'react';
 import secretStore from '../store/newSecretStore';
 import { Link } from 'react-router';
-
+import Error from './error';
+import authLayerStore from '../store/authlayerCheck';
 import FileProtect from './fileProtection';
+import AuthCheck from './authLayerCheck';
+import { useEffect } from 'react';
+import './../styles/media.css'
 
 function AddSecret(){
 
@@ -18,8 +22,12 @@ function AddSecret(){
     const [openDocs, setOpenDocs] = useState(false);
     const [jsondata, setJsonData] = useState({"greeting" : "hello"})
     
-    const {sendingDataOfJSonPassword, sendingCredentialsToReceiverViaMail,iv,encryptedFile,fileEncryptionDone, isLoading} = secretStore()
+    const {sendingDataOfJSonPassword,returnToInitialStateInSensitiveDataComp, newSecretErrorMsg,numCounter,displayCounterNumberOfkeys,newSecretError, settingNewSecretErroTrue,sendingCredentialsToReceiverViaMail,iv,encryptedFile,fileEncryptionDone, isLoading} = secretStore()
     const secret_key = createRef()
+    const {checkToAddLayer} = authLayerStore();
+    // useEffect(el=>{
+    //     checkToAddLayer()
+    // }, [])
 
     const handleJsonChange = (e)=>{
         console.log(e);
@@ -32,8 +40,15 @@ function AddSecret(){
         }
     }
 
+    function keyLengthCheck(){
+        displayCounterNumberOfkeys(secret_key.current.value)
+    }
+
     const prepsTheJsonFinalize = ()=>{
-        console.log(JSON.stringify(jsondata));
+        if(secret_key.current.value.length < 32){
+            settingNewSecretErroTrue("The key must of 32 digit")
+            return;
+        }
         sendingDataOfJSonPassword({secret : secret_key.current.value, file : JSON.stringify(jsondata)})
     }
 
@@ -54,8 +69,17 @@ function AddSecret(){
         })
     }
 
+    function backToAddNewSecertState(){
+        returnToInitialStateInSensitiveDataComp()
+    }
+
     return(
-        <div className='secret flex flex-dir gap16'>
+        <div className='secret flex flex-dir gap16 pad16'>
+            <AuthCheck/>
+
+            {newSecretError &&
+                <Error msg={newSecretErrorMsg}/>
+            }
             <h2 className='head2 head2_ decenter'>Send sensitive data securily</h2>
             <div className='flex gap16'>
                 <button onClick={PassState} className='btn'>Generate password links</button>
@@ -79,7 +103,8 @@ function AddSecret(){
                                     onDelete={handleJsonChange}
                                     />
                             </div>
-                            <input ref={secret_key} className='inp__' placeholder='Your secret key'/> 
+                            <p className='len'>{numCounter}/32</p>
+                            <input onChange={keyLengthCheck} ref={secret_key} className={numCounter != 32 ? 'inp__ redbg' : 'inp__ greenbg'} placeholder='Your secret key'/> 
                             <button onClick={prepsTheJsonFinalize} className='GenerateBtn btn'>Generate secure shareable link</button>
                         </>
                     }
@@ -92,7 +117,7 @@ function AddSecret(){
                                 </div>
                                 :
                                 <div className='displayFiles flex flex-dir gap16'>
-                                    <div style={{ width: '100%', height: '20rem', overflowY: 'auto', padding: '1rem', border: '0.1rem solid var(--color-second)', borderRadius: '0.1rem' }}>
+                                    <div className='jsontext' style={{ width: '100%', height: '20rem', overflowY: 'auto', padding: '1rem', border: '0.1rem solid var(--color-second)', borderRadius: '0.1rem' }}>
                                         <ReactJson
                                             src={{"encypted-Code" : encryptedFile}}
                                             theme="monokai" // or "bright:inverted" etc.
@@ -102,9 +127,10 @@ function AddSecret(){
                                             enableClipboard={true}
                                         />
                                     </div>
-                                    <Link to={`/secure/${encryptedFile}/${iv}`} className='visit link'>Preview link</Link>
-                                    <input className='inp__' placeholder='receiver email id' type='text' />
-                                    <button onClick={Sharing} className='sendbtn btn'>Send via mail</button>
+                                    <Link to={`/secure/${encryptedFile}/${iv}`} className='visit btn link'>Preview link / share</Link>
+                                    <button onClick={backToAddNewSecertState} className='btn'>Add new secret +</button>
+                                    {/* <input className='inp__' placeholder='receiver email id' type='text' /> */}
+                                    {/* <button onClick={Sharing} className='sendbtn btn'>Send via mail</button> */}
                                 </div>
                             }
 

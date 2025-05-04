@@ -4,6 +4,7 @@ const layerStore = create(
     (set)=>({
         layerStatus : false,
         setSecurityLayer : async(password)=>{
+            
             localStorage.setItem('auth_layer', JSON.stringify(password))
             set({layerStatus : true})
         }

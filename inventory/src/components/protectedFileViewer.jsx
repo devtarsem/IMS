@@ -3,6 +3,8 @@ import './../utils/util.css'
 import { useParams , useLocation} from 'react-router-dom';
 import newSecretStore from '../store/newSecretStore';
 import {createRef, useEffect} from 'react';
+import './../styles/media.css'
+
 
 function ProtectedFileViewer(){
 
@@ -22,7 +24,7 @@ function ProtectedFileViewer(){
     return(
         <div className="fileviewer pad16 flex flex-2 flex-dir gap16">
             <h2 className='head2 head2_'>Fill password to see the protected file</h2>
-            <div className='flex flex-2 passcheck'>
+            <div className='prtefileinp flex flex-2 passcheck'>
                 <input ref={password} className='inp__' placeholder='password' type='password'/>
                 <button onClick={checkingPassword} className='btn'>Show my file</button>
             </div>
