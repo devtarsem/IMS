@@ -34,7 +34,7 @@ const mySecretStore = create(
             const auth = JSON.parse(localStorage.getItem('auth'))
             axios({
                 method : "POST",
-                url : "http://127.0.0.1:3003/api/v1/user-files/protected-files",
+                url : "https://ims-back.onrender.com/api/v1/user-files/protected-files",
                 data : {
                     id : auth.id,
                     pagistart : 1,
@@ -80,7 +80,7 @@ const mySecretStore = create(
         descryptPassword : async(obj, allData)=>{
             axios({
                 method : 'POST',
-                url : 'http://127.0.0.1:3003/api/v1/user-files/derypt-asked',
+                url : 'https://ims-back.onrender.com/api/v1/user-files/derypt-asked',
                 data : {
                     obj : obj,
                     id : JSON.parse(localStorage.getItem('auth')).id
@@ -130,7 +130,7 @@ const mySecretStore = create(
         deleteHashSensitiveData : async(identity)=>{
             axios({
                 method : 'POST',
-                url : 'http://127.0.0.1:3003/api/v1/user-files/delete-sensitive-data',
+                url : 'https://ims-back.onrender.com/api/v1/user-files/delete-sensitive-data',
                 data : {
                     identity,
                     user_id : JSON.parse(localStorage.getItem('auth')).id
@@ -166,7 +166,7 @@ const mySecretStore = create(
         deleteProtectedFiles : async(identity)=>{
             axios({
                 method : 'POST',
-                url : "http://127.0.0.1:3003/api/v1/user-files/delete-protected-files",
+                url : "https://ims-back.onrender.com/api/v1/user-files/delete-protected-files",
                 data : {
                     identity,
                     user_id : JSON.parse(localStorage.getItem('auth')).id

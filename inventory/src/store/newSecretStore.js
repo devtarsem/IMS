@@ -39,7 +39,7 @@ const secretStore = create(
             set({isLoading : true})
             axios({
                 method : 'POST',
-                url : "http://127.0.0.1:3003/api/v1/user-files/secure",
+                url : "https://ims-back.onrender.com/api/v1/user-files/secure",
                 data : {
                     file : fileData,
                     id : JSON.parse(localStorage.getItem('auth')).id,
@@ -55,7 +55,7 @@ const secretStore = create(
         sendingCredentialsToReceiverViaMail : async(creds)=>{
             axios({
                 method : 'POST',
-                url : 'http://127.0.0.1:3003/api/v1/user-files/mail',
+                url : 'https://ims-back.onrender.com/api/v1/user-files/mail',
                 data : {
                     credentials : creds
                 }
@@ -71,7 +71,7 @@ const secretStore = create(
             
             axios({
                 method : 'POST',
-                url : 'http://127.0.0.1:3003/api/v1/user-files/protect-file',
+                url : 'https://ims-back.onrender.com/api/v1/user-files/protect-file',
                 data : {
                     url : url,
                     password : password,
@@ -94,7 +94,7 @@ const secretStore = create(
         passwordPassingToBAckendToPenFile : async(password, id, identifier)=>{
             axios({
                 method : 'POST',
-                url : "http://127.0.0.1:3003/api/v1/user-files/password-check-for-secure-file",
+                url : "https://ims-back.onrender.com/api/v1/user-files/password-check-for-secure-file",
                 data : {
                     password : password,
                     id : id,

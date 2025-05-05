@@ -17,7 +17,7 @@ const linkstore = create(
             
             axios({
                 method : "POST",
-                url : "http://127.0.0.1:3003/api/v1/user-files/decrypt",
+                url : "https://ims-back.onrender.com/api/v1/user-files/decrypt",
                 data : {
                     key : key,
                     code : code,

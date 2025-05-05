@@ -18,7 +18,7 @@ const homestore = create(
             
             axios({
                 method : 'POST',
-                url : "http://127.0.0.1:3003/api/v1/auth-user/auth",
+                url : "https://ims-back.onrender.com/api/v1/auth-user/auth",
                 data : {
                     username : name,
                     email : email,
