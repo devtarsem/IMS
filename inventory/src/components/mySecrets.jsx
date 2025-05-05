@@ -1,7 +1,7 @@
 import './../styles/mysecrets.css'
 import './../utils/util.css'
-import AllSensitiveData from './AllSensitiveData';
-import AllprotectedFiles from './AllProtectedFiles';
+import AllSensitiveData from './allSensitiveData';
+import AllprotectedFiles from './allProtectedFiles';
 import {useState, useEffect} from 'react';
 import mySecretStore from '../store/mysecret';
 import AuthCheck from './authLayerCheck';
