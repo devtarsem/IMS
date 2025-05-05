@@ -1,13 +1,6 @@
 import './../styles/home.css'
 import './../utils/util.css'
-import google from './../icon/google.png'
-import Microsoft from './../icon/Microsoft.png'
-import apple from './../icon/apple.png'
-import { storage } from './../firebase';
-import {ref, uploadBytes, getDownloadURL} from 'firebase/storage';
-import { getAuth } from "firebase/auth";
-import { signInWithPopup } from 'firebase/auth';
-import {auth, provider} from './../firebase';
+
 import homestore from '../store/homeStore'
 import { useEffect } from 'react'
 import Auth from './auth'
