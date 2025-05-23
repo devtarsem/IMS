@@ -28,7 +28,7 @@ function Auth(){
             <div className='logsBox flex flex-dir gap16'>
                 <button onClick={loginWithGoogle} className='btn flex flex-2 gap16'>
                     <img src={google} className='icon_auth' alt='icons'/>
-                    conitnue with google
+                    continue with google
                 </button>
                 {/* <button className='btn flex flex-2 gap16'>
                     <img src={Microsoft} className='icon_auth' alt='icons'/>

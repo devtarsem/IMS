@@ -18,7 +18,7 @@ function AuthCheck(){
         <div className={!addLayer ? "authCheck flex flex-2 " : "authCheck zLess flex flex-2"}>
             <div className='flex flex-dir flex-2 gap16'>
                 <h1 className='head_auth'>Please add security layer.</h1>
-                <Link to='dashboard/home' className='btn redirect'>Add security layer</Link>
+                <Link to='/dashboard/home' className='btn redirect'>Add security layer</Link>
             </div>
         </div>
     )
