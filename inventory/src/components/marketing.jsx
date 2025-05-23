@@ -34,7 +34,7 @@ function Marketing(){
                     <div className="feagrids grid grid-2-col gap16">
                         <div className="contentoffea flex flex-2 pad16 flex-dir gap16">
                             <p className="tag">01</p>
-                            <p className="des">We have full organised dashboard for you, in which you can genrate as many secret codes as you want and send them from the provided links, you will be double layer of security so that you data must be safe and secure.</p>
+                            <p className="des">We have full organised dashboard for you, in which you can generate as many secret codes as you want and send them from the provided links, you will get double layer of security so that you data must be safe and secure.</p>
                         </div>
                         <div className="imgfea pad16">
                             <img src={fea1} alt='features' className='feature'/>
@@ -47,7 +47,7 @@ function Marketing(){
                         </div>
                         <div className="contentoffea flex flex-2 pad16 flex-dir gap16">
                             <p className="tag">02</p>
-                            <p className="des">Our dashboard will gives you 2 great feature one is you can send one time visible json data to anyone  through our provided link, once the receiver seesthe data he/she can't be able to see it again and second you can send password protected files through our provided links.</p>
+                            <p className="des">Our dashboard will gives you 2 great feature one is you can send one time visible json data to anyone  through our provided link, once the receiver sees the data he/she can't be able to see it again and second you can send password protected files through our provided links.</p>
                         </div>
                     </div>
                     <hr/>
@@ -69,7 +69,7 @@ function Marketing(){
                         </div>
                         <div className="contentoffea flex flex-2 pad16 flex-dir gap16">
                             <p className="tag">04</p>
-                            <p className="des">You can see your private data at any time as you want and chamge you essential credentials as well.</p>
+                            <p className="des">You can see your private data at any time as you want and change you essential credentials as well.</p>
                         </div>
                     </div>
                 </div>
